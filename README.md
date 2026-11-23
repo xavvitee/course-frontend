@@ -404,9 +404,9 @@
 </html>
 ```
 
-## Section 15: CSS3- Advanced CSS Selections
+# Section 15: CSS3- Advanced CSS Selections
+## Coding Exercise 14: Advanced CSS Selectors Coding Exercise
 ```
-Coding Exercise 14: Advanced CSS Selectors Coding Exercise
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -434,8 +434,8 @@ Coding Exercise 14: Advanced CSS Selectors Coding Exercise
 ```
 
 ## Section 20: Modern JavaScript - Variables, Scopes, and More
+# Coding Exercise 15: Check Variable Scope Exercise
 ```
-Coding Exercise 15: Check Variable Scope Exercise
 let x = "red";
 console.log(x);
 
@@ -492,4 +492,253 @@ console.log('Array: ', typeof array_demo);
 // Arrays
 const array_demo = ['Apple', 'Mango', 'Orange'];
 console.log('Array: ', typeof array_demo);
+```
+## Coding Exercise 17: Assignment and Comparison Operators Exercise
+```
+let a = 5;
+let b = 4;
+
+console.log(a, typeof a);
+console.log(b, typeof b);
+
+if (a > b) {
+    console.log("a is greater than b");
+} else if (a < b) {
+    console.log("a is less than b");
+}
+
+if (a >= b) {
+    console.log("a is greater than or equal to b");
+} else if (a <= b) {
+    console.log("a is less than or equal to b");
+}
+
+if (a !== b) {
+    console.log("a is not equal to b");
+} else {
+    console.log("a is equal to b");
+}
+
+```
+# Section 21: Modern JavaScript - Working with Arrays
+## Coding Exercise 18: Coding Exercise to work with Array
+```
+let item = "Laptop";
+let my_collection = ["Desktop", item, 5, true];
+my_collection[2] = "Tablet";
+console.log(my_collection);
+```
+## Coding Exercise 19: Coding Exercise to Display HTML in Console
+```
+let computers = ["Desk", "Laptop", "Tablet PC"];
+
+computers.forEach(function(item) {
+    let listItem = `<li>${item}</li>`;
+    console.log(listItem);
+});
+```
+## Coding Exercise 20: Coding Exercise for Removing items from Array
+```
+const my_desktop = [
+    "apple",
+    "Laptop",
+    "Phone",
+    "Remote",
+    "Cup",
+    "Book",
+    "Headphones",
+    "Pendive",
+    "USB Hub"
+];
+console.log("Original Items: ", my_desktop);
+
+let remove_item = "Cup";
+my_desktop.splice(my_desktop.indexOf(remove_item), 1);
+
+console.log(`Array item with name "${remove_item}" has been removed: `, my_desktop);
+```
+
+# Section 22: Modern JavaScript - Working with Objects 
+## Coding Exercise 21: Creating Multiple Objects Coding Exercise
+```
+const desktop = {
+    screens: {
+        resolution: 1080,
+        displayType: "LED",
+        touchEnabled: false
+    },
+    pointingDevice: "Wireless Mouse",
+    ram: "32 GB",
+    storage: "1 TB",
+    wifi: false
+};
+
+console.log("Desktop:", desktop);
+```
+## Coding Exercise 22: Accessing Object Properties Coding Exercise
+```
+const laptop = {
+    screens: {
+        resolution: 1080,
+        displayType: "LCD",
+        touchEnabled: false
+    },
+    pointingDevice: "Trackpad",
+    ram: "16 GB",
+    storage: "512 GB",
+    wifi: true,
+    toggleWifi: function(wifi_status) {
+        this.wifi = wifi_status;
+    },
+    wifiBands: function(wb_2_5g, wb_5g) {
+        this.speed_wb_2_5g = wb_2_5g;
+        this.speed_wb_5g = wb_5g;
+    }
+};
+
+console.log("Laptop:", laptop);
+console.log("Storage:", laptop.storage);
+console.log("Screen Resolution:", laptop.screens.resolution);
+
+let query = "ram";
+console.log("RAM:", laptop[query]);
+```
+
+# Section 23: Modern JavaScript - Functions and methods 
+## Coding Exercise 23: Create Different Types of Functions Coding Exercise
+```
+// 1. Function Declaration
+function doAddition(a, b) {
+    let c = a + b;
+    return c;
+}
+
+// 2. Function Expression
+const doMultiplication = function(a, b) {
+    let c = a * b;
+    return c;
+};
+
+// 3. Immediately Invoked Function Expression (IIFE)
+(function() {
+    console.log("IIFE executed!");
+})();
+```
+# Coding Exercise 24: Creating Elements Coding Exercise
+```
+// Step 1: Create a JavaScript object to represent the Lenovo laptop
+const lenovoLaptop = {
+  name: "Lenovo Gaming",
+  color: "Black",
+  ram: 16,
+  storage: 512,
+};
+
+// Step 2: Define a function that returns an HTML article element
+const addlaptop = function (currentLaptop) {
+  const newArticle = document.createElement("article");
+  newArticle.innerHTML = `
+    <h1>${currentLaptop.name}</h1>
+    <p>Details are as below:</p>
+    <ul>
+      <li>Color: ${currentLaptop.color}</li>
+      <li>RAM: ${currentLaptop.ram}GB</li>
+      <li>Storage: ${currentLaptop.storage}GB</li>
+    </ul>
+  `;
+  return newArticle;
+};
+
+// Step 3: Call addlaptop() and store the returned element
+const theArticle = addlaptop(lenovoLaptop);
+
+// Step 4: Log the element to the console
+console.log(theArticle);
+
+// Step 5: Select the <main> element from the DOM
+const main = document.querySelector("main");
+
+// Step 6: Append the new <article> element to <main>
+main.append(theArticle);
+```
+## Coding Exercise 25: Loops with Objects Coding
+```
+const objectList = {
+    item01: { type: "Laptop" },
+    item02: { type: "Desktop" },
+    item03: { type: "Tablet" },
+    item04: { type: "Phone" }
+};
+
+for (const item in objectList) {
+    let object_list = `Name: ${item}, Type: ${objectList[item].type}`;
+    console.log(object_list);
+}
+
+```
+
+## Coding Exercise 26: Using map() Array Method Coding Exercise
+```
+// 1. Create the computers array
+const computers = ["Desktop", "Laptop", "Tablet", "Smart Phone"];
+
+// 2 - 6. Call the built-in map() method on the computers array
+const computersType = computers.map(function (item) {
+    // 3. Create a new HTML <li> element
+    const listItem = document.createElement("li");
+    
+    // 4. Set the innerHTML property to the current item
+    listItem.innerHTML = item;
+    
+    // 5. Return the <li> element
+    return listItem;
+});
+
+// 7. Log both arrays to the console
+console.log(computers);
+console.log(computersType);
+```
+
+# Section 24: Modern JavaScript - String Outputs
+## Coding Exercise 27: Legacy String Concatenation Coding Exercise
+```
+Legacy String Concatenation Coding Exercise
+// 1. Create a String
+const string1 = "Hello, ";
+const string2 = "World!";
+const blockOfCode = string1 + string2;
+
+// 2. Output strings to console
+console.log(blockOfCode);
+```
+
+# Section 25: Modern JavaScript - DOM 
+## Coding Exercise 28: Create a NavBar with Pure JavaScript Coding Exercise
+```
+Create a NavBar with Pure JavaScript Coding Exercise
+// 1. Create a string containing the HTML code for the navigation items
+const navBar = `
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#contact">Contact</a></li>
+`;
+
+// 2. Create a new <nav> element
+const mainNav = document.createElement("nav");
+
+// 3. Add the "main-menu" class to the <nav> element
+mainNav.classList.add("main-menu");
+
+// 4. Create a new <ul> element
+const navList = document.createElement("ul");
+
+// 5. Set the innerHTML of the <ul> to the navBar string
+navList.innerHTML = navBar;
+
+// 6. Append the <ul> to the <nav> element
+mainNav.append(navList);
+
+// 7. Prepend the <nav> element to the .container element
+document.querySelector(".container").prepend(mainNav);
 ```
